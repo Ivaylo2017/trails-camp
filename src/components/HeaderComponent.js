@@ -2,12 +2,12 @@ import React, { Component }  from 'react';
 import { Nav, Navbar, NavbarBrand, NavbarToggler, Collapse, NavItem, Jumbotron,
 Button, Modal, ModalHeader, ModalBody, Form, FormGroup, Input, Label } from 'reactstrap';
 import { NavLink } from 'react-router-dom';
+import NucampLogo from '../app/assets/img/logo.png'
 
 class Header extends Component {
 
     constructor(props){
         super(props);
-;
         this.state = {
             isNavOpen: false,
             isModalOpen: false
@@ -51,7 +51,10 @@ class Header extends Component {
 
                 <Navbar dark sticky="top" expand="md">
                     <div className="container">
-                        <NavbarBrand className="mr-auto" href="/"><img src="/assets/images/logo.png" height="30" width="30" alt="NuCamp Logo"/></NavbarBrand>
+                        <NavbarBrand className="mr-auto ms-5" href="/">
+                            <img src={NucampLogo} height="30" width="30" alt="NuCamp Logo" className='float-start'/>
+                            <h1 className='mt-1'>NuCamp</h1>    
+                        </NavbarBrand>
                         <NavbarToggler onClick={this.toggleNav} />
                         <Collapse isOpen={this.state.isNavOpen} navbar>
                             <Nav navbar>
