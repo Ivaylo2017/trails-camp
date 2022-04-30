@@ -1,7 +1,10 @@
 import React, {Component} from 'react';
-import Main from './components/MainComponent';
+// import Main from './components/MainComponent';
+import CampsitesDirectoryPage from './pages/CampsitesDirectoryPage';
 import { BrowserRouter } from 'react-router-dom';
 import './App.css';
+import Header from './components/HeaderComponent';
+import Footer from './components/FooterComponent';
 
 class App extends Component {
 
@@ -9,7 +12,10 @@ class App extends Component {
     return (
       <BrowserRouter>
         <div className='App'>
-            <Main />
+            {/* <Main /> */}
+            <Header />
+            <CampsitesDirectoryPage/>
+            <Footer />
         </div>
       </BrowserRouter>
     );

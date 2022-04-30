@@ -1,0 +1,26 @@
+import { Col, Row } from 'reactstrap';
+import CampsiteDetail from './CampsiteDetail';
+import { selectAllCampsites } from './campsitesSlice';
+
+
+const CampsitesList = ({ setCampsiteId }) => {
+    const campsites = selectAllCampsites();
+    return (
+        <Row className='ms-auto'>
+            {campsites.map((campsite) => {
+                return (
+                    <Col 
+                        md='5' 
+                        className='m-4' 
+                        key={campsite.id}
+                        onClick={() => setCampsiteId(campsite.id)}
+                    >
+                        <CampsiteDetail campsite={campsite} />
+                    </Col>
+                );
+            })}
+        </Row>
+    );
+};
+
+export default CampsitesList;
