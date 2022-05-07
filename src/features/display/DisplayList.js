@@ -1,5 +1,5 @@
 import { Col, Row } from 'reactstrap';
-import DisplayCard from './DisplayCard';
+import AnimatedDisplayCard from './AnimatedDisplayCard';
 import { selectFeatureCampsite } from '../campsites/campsitesSlice';
 import { selectFeaturedPromotion } from '../promotions/promotionsSlice';
 
@@ -10,10 +10,12 @@ const DisplayList = () => {
         <Row>
             {items.map((item, idx) => {
                 return (
+                    item && (
                     <Col md className='m-1' key={idx}>
-                        <DisplayCard item={item} />
+                        <AnimatedDisplayCard item={item} />
                     </Col>
-                )
+                    )
+                );
             })}
         </Row>
     );
